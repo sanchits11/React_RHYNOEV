@@ -1,0 +1,281 @@
+.product-container {
+    margin: 70px auto 20px; /* Center horizontally with auto margins */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row; /* Default to row on larger screens */
+    background-color: #3C3C3C; /* Dark grey */
+    border: 1px solid #424242; /* Dark grey */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    width: 100%;
+    max-height: 90vh; /* Adjust the max height to be less than 100% of the viewport height */
+    overflow: auto; /* Enable scrolling if content overflows */
+    padding: 20px;
+}
+/* First Division: Image Carousel */
+.carousel-division {
+    margin-bottom: 20px;
+    flex: 1; /* Allow the carousel to flex */
+    width: 100%; /* Ensure it takes full width */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the entire image is visible */
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-images img:not(:first-child) {
+    opacity: 0;
+}
+
+/* Second Division: Description, Color Options, and Buy Button */
+.details-division {
+    max-width: 600px;
+    padding: 20px;
+    flex: 1; /* Allow the details division to flex */
+    text-align: center; /* Center text for better mobile view */
+}
+
+.details-division h1 {
+    margin-top: 0;
+    color: #FAFAFA; /* White */
+    font-size: 24px;
+}
+
+.reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center reviews */
+}
+
+.stars {
+    color: #FFF225; /* Yellow */
+    margin-right: 10px;
+}
+
+.color-selection {
+    margin: 20px 0;
+    color: #FAFAFA; /* White */
+    text-align: center; /* Center color selection */
+}
+
+.color-selection label {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center labels */
+    margin: 5px 0;
+    font-size: 16px;
+    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+    position: relative;
+}
+
+.color-radio {
+    appearance: none; /* Remove default styling */
+    width: 0; /* Hide the radio button */
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer; /* Change cursor to pointer for radio button */
+    position: absolute;
+}
+
+.color-radio + .color-swatch {
+    display: inline-block;
+    width: 30px; /* Slightly larger size for better visibility */
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #424242; /* Dark grey border for color swatch */
+    background-color: #ccc; /* Default grey background */
+    position: relative;
+    margin-right: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interaction */
+}
+
+.color-radio:checked + .color-swatch {
+    border-color: #FFF225; /* Highlight border color for selected radio button */
+    box-shadow: 0 0 0 4px rgba(255, 236, 0, 0.5); /* Glow effect for selected color */
+}
+
+.color-radio:focus + .color-swatch {
+    outline: none;
+    border-color: #FFF225; /* Border color on focus for accessibility */
+    box-shadow: 0 0 0 4px rgba(255, 236, 0, 0.5); /* Glow effect on focus */
+}
+
+/* Specific colors for each swatch */
+input[type="radio"][value="black"] + .color-swatch {
+    background-color: #000; /* Black */
+}
+
+input[type="radio"][value="red"] + .color-swatch {
+    background-color: #f00; /* Red */
+}
+
+input[type="radio"][value="blue"] + .color-swatch {
+    background-color: #00f; /* Blue */
+}
+
+.review-count {
+    color: #FFF225; /* Yellow */
+}
+
+.price {
+    font-size: 24px;
+    color: #FFF225; /* Yellow */
+    margin: 10px 0;
+}
+
+.old-price {
+    font-size: 16px;
+    color: #EDEDED; /* White */
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+
+.product-description p {
+    color: #FAFAFA; /* White */
+    line-height: 1.6;
+}
+
+.availability {
+    color: #FFF225; /* Yellow */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buy-now {
+    background-color: #F9ED32; /* Yellow */
+    color: #252525; /* Black */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-now:hover {
+    background-color: #FFF225; /* Yellow */
+}
+
+/* Third Division: Features Table */
+.features-division {
+    margin-top: 20px;
+    text-align: center; /* Center features division */
+    flex: 1; /* Allow the features division to flex */
+}
+
+.features-division h2 {
+    color: #FAFAFA; /* White */
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.product-details {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: #FAFAFA; /* White */
+}
+
+.product-details th, .product-details td {
+    border: 1px solid #424242; /* Dark grey */
+    padding: 10px;
+    text-align: left;
+}
+
+.product-details th {
+    background-color: #252525; /* Black */
+}
+
+.product-details td {
+    background-color: #373737; /* Dark grey */
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    .product-container {
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 70px auto; /* Center horizontally with auto margins */
+    }
+
+    .carousel-division {
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    .details-division {
+        max-width: 600px;
+        padding: 20px;
+        text-align: left; /* Align text to left for desktop view */
+    }
+
+    .features-division {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center; /* Center align the container */
+        margin: 70px auto; /* Center horizontally with auto margins */
+    }
+
+    .carousel-division {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .carousel {
+        height: 300px; /* Adjust height for smaller screens */
+        max-width: 100%; /* Ensure it takes full width */
+    }
+
+    .details-division {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .details-division h1 {
+        font-size: 20px;
+    }
+
+    .price {
+        font-size: 20px;
+    }
+
+    .old-price {
+        font-size: 14px;
+    }
+
+    .buy-now {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .features-division {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .product-details th, .product-details td {
+        padding: 8px;
+    }
+}

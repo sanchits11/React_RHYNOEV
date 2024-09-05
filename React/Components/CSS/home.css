@@ -1,0 +1,184 @@
+.home-container {
+    margin-top: 20px !important;
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height to allow scrolling if content exceeds viewport */
+    background-color: #3C3C3C; /* Dark grey */
+    color: #FFFFFF; /* White */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #2C2A2A; /* Dark grey */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: max width for hero section */
+    margin-bottom: 40px; /* Space between hero section and collage */
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.dynamic-word {
+    display: inline-block;
+    color: #F9ED32;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition effect */
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.collage-section {
+    text-align: center;
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: max width for collage section */
+    padding: 0 20px; /* Add padding for responsiveness */
+}
+
+.collage-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.collage {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+}
+
+.collage-image {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+.collage-image:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.checkout-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #F9ED32; /* Button background color */
+    color: #000; /* Button text color */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none; /* Remove underline from link */
+    transition: transform 0.3s ease-in-out;
+}
+
+.checkout-button:hover {
+    background-color: #F9ED32; /* Button background color on hover */
+    transform: scale(1.05);
+}
+
+.carousel-section {
+    width: 100%; /* Full width */
+    max-width: 1200px; /* Optional: max width for carousel section */
+    margin: 25px auto; /* Center the section with margin */
+}
+
+.carousel-container {
+    width: 100%; /* Full width of the parent container */
+    overflow: hidden; /* Hide overflowing content */
+    position: relative;
+    height: 300px; /* Adjust height according to content */
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Smooth transition for sliding effect */
+    height: 100%;
+    width: 100%; /* Ensure it takes full width */
+}
+
+.carousel-item {
+    min-width: 100%; /* Each item takes the full width of the container */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.carousel-image {
+    width: 45%; /* Adjusted to take more space */
+    height: auto;
+    margin-right: 20px;
+}
+
+.carousel-description {
+    width: 50%; /* Adjusted to take more space */
+    text-align: left;
+}
+
+.floating-prebook-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #F9ED32; /* Yellow color matching your theme */
+    color: #252525; /* Dark text color */
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.floating-prebook-button:hover {
+    background-color: #FFF225; /* Slightly lighter yellow on hover */
+}
+
+
+@keyframes changeColor {
+    0% { color: #F9ED32; }
+    50% { color: #FFF225; }
+    100% { color: #F9ED32; }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@media (max-width: 767px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .carousel-image, .carousel-description {
+        width: 100%; /* Stack images and description on smaller screens */
+        margin-right: 0;
+    }
+}

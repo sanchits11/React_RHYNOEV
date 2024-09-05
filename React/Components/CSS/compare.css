@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: 'Lato', 'Poppins', Calibri, 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    background-color: #202020; /* Using one of the black colors for background */
+    color: #FAFAFA; /* Lightest white for text color */
+    padding-top: 70px; /* Adjust according to the height of the navbar */
+}
+
+/* Table container styles */
+.comparison_table {
+    margin-top: 75px !important;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between items */
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 1200px; /* Maximum width for larger screens */
+    color: #FAFAFA; /* Lightest white for text color */
+    font: normal normal normal 14px/1.5em 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    cursor: default;
+    margin: 20px auto; /* Center horizontally */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* List item styles */
+.comparison_table > li {
+    background: #333; /* Dark gray background */
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#333), to(#000));
+    background: -webkit-linear-gradient(#333, #000);
+    background: -moz-linear-gradient(#333, #000);
+    background: -o-linear-gradient(#333, #000);
+    background: linear-gradient(#333, #000);
+    -webkit-box-shadow: inset 0 -15px 30px rgba(0, 0, 0, 0.4), 0 5px 10px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0 -15px 30px rgba(0, 0, 0, 0.4), 0 5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 -15px 30px rgba(0, 0, 0, 0.4), 0 5px 10px rgba(0, 0, 0, 0.5);
+    list-style-type: none;
+    margin-bottom: 20px; /* Add spacing between rows */
+    color: #FAFAFA; /* Default text color */
+    flex: 1 1 calc(25% - 20px); /* 4 columns layout with spacing */
+    max-width: calc(25% - 20px); /* Maximum width of 25% minus gap */
+    position: relative; /* Ensure positioning context for the line */
+}
+
+/* Hover state for list items - removed background color change */
+.comparison_table > li:hover {
+    font-weight: bold;
+}
+
+/* Active state - removed yellow background color */
+.comparison_table > li.active {
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+    box-shadow: 0 0 20px #000;
+}
+
+/* Header styles */
+.comparison_table h1 {
+    text-transform: uppercase;
+    padding: 15px 0;
+    font-weight: 400;
+    background: #444; /* Dark gray background for headers */
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#444), to(#222));
+    background: -webkit-linear-gradient(#444, #222);
+    background: -moz-linear-gradient(#444, #222);
+    background: -o-linear-gradient(#444, #222);
+    background: linear-gradient(#444, #222);
+    font-size: 24px;
+    color: #FAFAFA; /* Default text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow for differentiation */
+}
+
+/* Hover state for headers */
+.comparison_table h1:hover {
+    /* color: #000; Change text color to black on hover */
+    font-weight: bold;
+}
+
+/* Active header - removed yellow background color */
+.comparison_table h1.active { 
+    /* color: #000; */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Box shadow for differentiation */
+}
+
+/* Circle and footer styles */
+.comparison_table div.tcircle {
+    width: 125px;
+    height: 125px;
+    margin: 20px auto;
+    border: 2px solid #f9ed32; /* Yellow border */
+    border-radius: 100%;
+    position: relative;
+    -webkit-transition: all 0.3s ease .300ms;
+    -moz-transition: all 0.3s ease .300ms;
+    -o-transition: all 0.3s ease .300ms;
+    transition: all 0.3s ease .300ms;
+    -webkit-box-shadow: inset 0 0 20px #000;
+    -moz-box-shadow: inset 0 0 20px #000;
+    box-shadow: inset 0 0 20px #000;
+    display: table;
+}
+
+.comparison_table .product_image {
+    font-size: 30px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.product_image {
+    z-index: 1;
+    border-radius: 100%;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.comparison_table .tlist li {
+    list-style-type: none;
+    margin: 10px 0;
+}
+
+.comparison_table .tlist a {
+    color: #f9ed32; /* Yellow color for links */
+}
+
+.comparison_table .tfooter {
+    padding: 10px;
+    background: #444; /* Dark gray footer background */
+    border-top: 2px solid #f9ed32; /* Yellow border-top */
+    text-align: center; /* Center text in footer */
+    position: relative; /* Ensure positioning context for the line */
+}
+
+.comparison_table .tfooter .button {
+    color: #000; /* Black font color */
+    display: inline-block;
+    text-decoration: none;
+    background: #f9ed32; /* Yellow button background */
+    padding: 5px 10px;
+    border-radius: 15px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f9ed32), to(#FFF225));
+    background: -webkit-linear-gradient(#f9ed32, #FFF225);
+    background: -moz-linear-gradient(#f9ed32, #FFF225);
+    background: -o-linear-gradient(#f9ed32, #FFF225);
+    background: linear-gradient(#f9ed32, #FFF225);
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .comparison_table > li {
+        flex: 1 1 calc(33.333% - 20px); /* 3 columns on medium screens */
+        max-width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .comparison_table > li {
+        flex: 1 1 calc(50% - 20px); /* 2 columns on small screens */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .comparison_table > li {
+        flex: 1 1 100%; /* 1 column on extra-small screens */
+        max-width: 100%;
+    }
+}

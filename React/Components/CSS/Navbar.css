@@ -1,0 +1,306 @@
+/* QUICK RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', 'Poppins', Calibri, sans-serif;
+    background-color: #202020; /* Using one of the black colors for background */
+    color: #FAFAFA; /* Lightest white for text color */
+}
+
+/* Navbar */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2C2A2A; /* Dark grey for the navbar background */
+    position: fixed; /* Fix the navbar at the top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo img {
+    height: 70px; /* Increase height to make the logo bigger */
+    width: auto;
+    font-weight: bold;
+}
+
+.menu-link {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+.menu-link ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-link ul li {
+    margin: 0 30px;
+    position: relative;
+}
+
+.menu-link ul li a {
+    color: #FAFAFA; /* Lightest white for menu links */
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-link ul li a:hover {
+    color: #FFF225; /* Brighter yellow on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2C2A2A; /* Dark grey for dropdown background */
+    min-width: 200px; /* Adjust width for better visibility */
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%; /* Position below the parent item */
+    left: 0;
+    margin-top: 2px;
+    padding: 15px 0;    
+}
+
+.dropdown-content a {
+    color: #FAFAFA; /* Lightest white for dropdown links */
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.dropdown-content a:hover {
+    color: #FFF225; /* Brighter yellow on hover */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.social-media {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-media ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-media ul li {
+    margin-left: 15px;
+}
+
+.social-media ul li a {
+    color: #FAFAFA; /* Lightest white for social media icons */
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-media ul li a:hover {
+    color: #FFF225; /* Brighter yellow on hover */
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.social-media-mobile {
+    display: none;
+}
+
+/* Sliding Menu Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px); /* Blur effect */
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+/* Show overlay when menu is active */
+.menu-link.active ~ .menu-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-link {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Initially off the screen */
+        width: 75%;
+        height: 100%;
+        background-color: #2C2A2A;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out; /* Smooth transition */
+        z-index: 5;
+    }
+
+    .menu-link ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-link ul li {
+        margin: 20px 0;
+    }
+
+    .menu-link ul li a {
+        font-size: 20px;
+        transition: color 0.3s, font-size 0.3s;
+    }
+
+    .menu-link ul li a:hover {
+        color: #FFF225;
+        font-size: 25px;
+    }
+
+    .menu-link.active {
+        left: 0; /* Slide in from the left */
+    }
+
+    .hamburger {
+        display: flex;
+        cursor: pointer;
+        font-size: 24px;
+        color: #FAFAFA;
+        z-index: 10;
+    }
+
+    .cancel {
+        display: flex;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        font-size: 24px;
+        color: #FAFAFA;
+        z-index: 15;
+        transition: color 0.3s, font-size 0.3s;
+    }
+
+    .cancel:hover {
+        color: #FFF225; /* Change color on hover */
+        font-size: 28px;
+    }
+
+    .social-media {
+        display: none;
+    }
+
+    .social-media-mobile {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+        flex-direction: row; /* Ensure icons are in a single row */
+        margin: 40px;
+    }
+
+    .social-media-mobile ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex-direction: row;
+    }
+
+    .social-media-mobile ul li {
+        margin: 0 15px;
+    }
+
+    .social-media-mobile ul li a {
+        color: #FAFAFA;
+        font-size: 30px;
+        transition: color 0.3s, font-size 0.3s;
+    }
+
+    .social-media-mobile ul li a:hover {
+        color: #FFF225;
+        font-size: 35px;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .dropdown-content a {
+        display: none;
+        box-shadow: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .cancel {
+        display: none;
+    }
+}
+
+/* Ensure content is below the navbar */
+.main-content {
+    padding-top: 100px; /* Adjust according to the height of the navbar */
+}
+
+/* CSS for dropdown menu */
+.menu-link .dropdown {
+    position: relative;
+}
+
+.menu-link .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /* background-color: #fff;
+    border: 1px solid #ddd; */
+    z-index: 1000;
+}
+
+.menu-link .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: white
+}
+
+.menu-link .dropdown-content a:hover {
+    background-color: #000;
+}
+
+.menu-link .dropdown .dropdown-content {
+    display: block;
+}

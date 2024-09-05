@@ -1,0 +1,83 @@
+.contact-container {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 20px;
+    background-color: #3C3C3C; /* Dark grey */
+    color: #FAFAFA; /* White */
+    border: 1px solid #424242; /* Dark grey */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.contact-container h1 {
+    font-size: 2.5rem;
+    color: #FFF225; /* Yellow */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #EDEDED; /* White */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+.contact-details a {
+    color: #FFF225; /* Yellow */
+    text-decoration: none;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.map-container {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    height: 450px; /* Default height */
+    border: 1px solid #424242; /* Dark grey */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 10px;
+    }
+
+    .contact-container h1 {
+        font-size: 2rem;
+    }
+
+    .contact-details p {
+        font-size: 1rem;
+    }
+
+    .map-container {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+}

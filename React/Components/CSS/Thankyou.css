@@ -1,0 +1,34 @@
+/* src/CSS/ThankYou.css */
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.thank-you-container h2 {
+    font-size: 2rem;
+    color: #4CAF50; /* You can adjust the color as per your theme */
+}
+
+.thank-you-container p {
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+.home-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff; /* Button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

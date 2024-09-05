@@ -1,0 +1,82 @@
+.prebook-form-container {
+    width: 440px !important;
+    max-width: 1000px; /* Increased width for a more proportional appearance */
+    margin: 50px auto; /* Added margin at the top and bottom for gap */
+    margin-top: 60px;
+    padding: 20px;
+    border: 1px solid #414141; /* Dark grey border */
+    border-radius: 5px;
+    background-color: #252525; /* Black background */
+    color: #F9ED32; /* Yellow text color */
+    min-height: calc(100vh - 500px); /* Full screen minus header and footer height */
+    overflow-y: auto; /* Allows vertical scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prebook-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFF225; /* Yellow color for heading */
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #F9ED32; /* Yellow label color */
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #373737; /* Dark grey border */
+    border-radius: 4px;
+    background-color: #2C2A2A; /* Dark grey input background */
+    color: #FFFFFF; /* White text color for inputs */
+}
+
+.pay-now {
+    width: 100%;
+    padding: 10px;
+    background-color: #F9ED32; /* Yellow button background */
+    color: #252525; /* Black text color for button */
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.pay-now:hover {
+    background-color: #FFF225; /* Lighter yellow on hover */
+}
+
+@media (min-width: 768px) {
+    .prebook-form-container {
+        width: 70%;
+        max-width: 600px;
+    }
+}
+
+/* For desktops and larger screens */
+@media (min-width: 1024px) {
+    .prebook-form-container {
+        width: 60%;
+        max-width: 800px;
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1200px) {
+    .prebook-form-container {
+        width: 50%;
+        max-width: 1000px; /* Maximum width for larger screens */
+    }
+}
